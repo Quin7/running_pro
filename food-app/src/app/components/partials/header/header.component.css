@@ -1,12 +1,13 @@
 header{
-  position:relative;
+  position:sticky;
+  top: 0;
   background: white;
   padding: 0;
   border-bottom: 1px solid #e72929;
+  z-index: 1;
 }
 a{
   color: #af1313;
-
 }
 a:hover{
   background: #e72929;
