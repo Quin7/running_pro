@@ -4,7 +4,7 @@
       <img [src]="food.imageUrl" [alt]="food.name" />
       <div class="content">
         <div class="name">
-          {{food.name}}
+          <b>{{food.name}}</b>
         </div>
         <span class="favorite {{food.favorite?'':'not'}}">
           ❤
@@ -27,7 +27,7 @@
         </div>
         <div class="price">
           <span>
-            {{food.price | currency}}
+            <b>{{food.price | currency:'INR'}}</b>
           </span>
         </div>
       </div>

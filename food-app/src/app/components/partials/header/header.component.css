@@ -1,16 +1,15 @@
 header{
   position:sticky;
   top: 0;
-  background: white;
+  background: #e72929;
   padding: 0;
   border-bottom: 1px solid #e72929;
   z-index: 1;
 }
 a{
-  color: #af1313;
+  color: white;
 }
 a:hover{
-  background: #e72929;
   color:white;
   cursor: pointer;
 }
@@ -45,7 +44,7 @@ a span{
 .menu{
   position: absolute;
   z-index: 1;
-  background: whitesmoke;
+  background: #e72929;
   display: none;
 }
 .menu-container:hover .menu{
@@ -54,4 +53,8 @@ a span{
 .menu a{
   width: 100%;
   min-width: 8rem;
+}
+.menu a:hover{
+  background-color: white;
+  color: #e72929;
 }

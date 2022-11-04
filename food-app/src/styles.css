@@ -11,6 +11,9 @@ html,button{
 }
 body{
   margin: 0;
+  background-image: url('./assets/background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 a{
   text-decoration: none;
