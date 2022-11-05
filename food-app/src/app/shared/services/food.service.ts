@@ -12,4 +12,9 @@ export class FoodService {
   getAllFoods():Food[]{
     return foods_list;
   }
+  getAllFoodsBySearchTerm(searchTerm:string){
+    return this.getAllFoods()
+    .filter(food => food.name.toLowerCase()
+    .includes(searchTerm.toLowerCase()))
+  }
 }
