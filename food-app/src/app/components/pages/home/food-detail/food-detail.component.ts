@@ -23,4 +23,8 @@ export class FoodDetailComponent implements OnInit {
 
   }
 
+  addToCart(){
+
+  }
+
 }
