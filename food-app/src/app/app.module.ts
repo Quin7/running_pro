@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/pages/search/search.component';
+import { FoodDetailComponent } from './components/pages/home/food-detail/food-detail.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -12,10 +14,12 @@ import { SearchComponent } from './components/pages/search/search.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
+    FoodDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
