@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../models/Food';
 import { foods_list } from '../../data/food-data';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FOODS_URL, FOOD_BY_URL, SEARCH_URL } from '../constants/urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAllFoods():Food[]{    // Getting all the foods
-    return foods_list;
+  getAllFoods():Observable<Food[]>{    // Getting all the foods
+    return this.http.get<Food[]>(FOODS_URL);
   }
-  getAllFoodsBySearchTerm(searchTerm:string){   // Getting foods by search term
-    return this.getAllFoods()
-    .filter(food => food.name.toLowerCase()
-    .includes(searchTerm.toLowerCase()))
+  getAllFoodsBySearchTerm(searchTerm:string):Observable<Food[]>{   // Getting foods by search term
+    return this.http.get<Food[]>(SEARCH_URL + searchTerm);
   }
 
-  getFoodById(foodId:string):Food{
-    return this.getAllFoods().find(food => food.id == foodId) ?? new Food();
+  getFoodById(foodId:string):Observable<Food[]>{
+    return this.http.get<Food[]>(FOOD_BY_URL + foodId);
   }
 }

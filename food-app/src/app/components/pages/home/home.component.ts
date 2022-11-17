@@ -15,11 +15,16 @@ export class HomeComponent implements OnInit {
   origins: any;
 
   constructor(private _foods:FoodService, activated_route:ActivatedRoute) {
+    let foodsObservable: Observable<Food[]>;
     activated_route.params.subscribe((params)=>{
       if(params.searchTerm)
-      this.foods = this._foods.getAllFoodsBySearchTerm(params.searchTerm);
+      foodsObservable = this._foods.getAllFoodsBySearchTerm(params.searchTerm);
       else
-      this.foods = _foods.getAllFoods();
+      foodsObservable  = _foods.getAllFoods();
+
+      foodsObservable.subscribe((serverFoods)=>{
+        this.foods = serverFoods;
+      })
     })
   }
 
